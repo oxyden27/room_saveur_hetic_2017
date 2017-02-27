@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="{% block html %}{% endblock html %}">
+    <head>
+        <!-- Basic -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>{% block title %}Room Saveurs{% endblock title %}</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{asset('bundles/heticapp/img/FaviconRooms.png')}}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="">
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Web Fonts  -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800|Roboto:100,300,400,900" rel="stylesheet">
+
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="{{asset('bundles/heticapp/vendor/libraries.css')}}">
+
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="{{asset('bundles/heticapp/css/style.css')}}">
+
+        {% block stylesheets %}
+        {% endblock stylesheets %}
+
+        <!-- Head Libs -->
+
+    </head>
+    <body>
+        {% block template %}
+        {% endblock template %}
+
+        <script src="{{asset('bundles/heticapp/js/jquery-3.1.0.min.js')}}"></script>
+        <script src="{{asset('bundles/heticapp/vendor/libraries.js')}}"></script>
+        <script src="{{asset('bundles/heticapp/js/global.js')}}"></script>
+
+        {% block javascripts_include %}
+        {% endblock javascripts_include %}
+
+        {% block javascripts_init %}
+        {% endblock javascripts_init %}
+    </body>
+</html>

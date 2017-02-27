@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="{% block html %}{% endblock html %}">
+    <head>
+        <!-- Basic -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>{% block title %}{% endblock title %}</title>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="">
+
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Web Fonts  -->
+
+        <!-- Theme Custom CSS -->
+        <link rel="stylesheet" href="{{asset('bundles/heticcore/css/style.css')}}">
+
+        <!-- Vendor CSS -->
+        <link rel="stylesheet" href="{{asset('bundles/heticcore/vendor/libraries.css')}}">
+
+        {% block stylesheets %}
+        {% endblock stylesheets %}
+
+        <!-- Head Libs -->
+
+    </head>
+    <body>
+        {% block template %}
+        {% endblock template %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="{{asset('bundles/heticcore/vendor/libraries.js')}}"></script>
+
+        {% block javascripts_include %}
+        {% endblock javascripts_include %}
+
+        {% block javascripts_init %}
+        {% endblock javascripts_init %}
+    </body>
+</html>

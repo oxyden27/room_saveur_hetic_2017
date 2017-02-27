@@ -1,0 +1,30 @@
+hetic_app_homepage:
+    path:     /
+    defaults: { _controller: HETICAppBundle:Home:index }
+
+hetic_app_about:
+    path:     /about
+    defaults: { _controller: HETICAppBundle:About:index }
+
+hetic_app_cart:
+    path:     /cart
+    defaults: { _controller: HETICAppBundle:Cart:index }
+
+hetic_app_adress:
+    path:     /adress
+    defaults: { _controller: HETICAppBundle:Adress:index }
+
+hetic_app_confirm:
+    path:     /confirm
+    defaults: { _controller: HETICAppBundle:Confirm:index }
+
+hetic_app_confirmrelais:
+    path:     /confirmrelais
+    defaults: { _controller: HETICAppBundle:ConfirmRelais:index }
+    
+hetic_app_relais:
+    path:     /relais
+    defaults: { _controller: HETICAppBundle:Relais:index }
+
+
+

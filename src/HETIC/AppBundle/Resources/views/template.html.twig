@@ -1,0 +1,79 @@
+{% extends 'HETICAppBundle::layout.html.twig' %} {% block template %} {% if app.request.hasPreviousSession %} {% for type, messages in app.session.flashbag.all() %} {% for message in messages %}
+<div class="flash-{{ type }}">
+    {{ message }}
+</div>
+{% endfor %} {% endfor %} {% endif %} {% block header %}
+<header>
+
+    <a href="{{path('hetic_app_homepage')}}">
+        <img src="{{asset('bundles/heticapp/img/logo_RS.png')}}" alt="logo_footer" class="logo" style="width:65px;height:65px">
+    </a>
+    <nav class="menu">
+        <span class="itemMenu itemMenu1"><a href="#">Se connecter</a></span>
+        <span class="itemMenu itemMenu2"><a href="#">S'inscrire</a></span>
+        <span class="itemMenu itemMenu3"><a href="#">Mon panier</a></span>
+   </nav>
+   <div class="burger-menu">
+        <div class="burger"></div>
+    </div>
+</header>
+{% endblock header %} {% block main %} {% endblock main %}
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <nav>
+                    <ul>
+
+                        <a href="{{path('hetic_app_homepage')}}">
+                            <img src="{{asset('bundles/heticapp/img/logo_RS.png')}}" alt="logo_footer" class="logo">
+                        </a>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <nav>
+                    <ul>
+                        <li><a href="#">Notre philosophie</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <nav class="socials">
+                    <ul>
+                        <li><i class="fa fa-facebook"></i></li>
+                        <li><i class="fa fa-instagram"></i></li>
+                        <li><i class="fa fa-twitter"></i></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr style="opacity:0.2">
+        <div class="row">
+            <div class="col-md-12">
+                <nav>
+                <ul class="socials">
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/marque-fauchon.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/bulle_roberta_75x75.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/boco_bulle.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/bulle_flo_bronze_1.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/bulle_pleine_nature_new2.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/destination_logo_bulle_1.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/new-logo-pause-dejeuner-2016-pastille.png')}}" alt="icone_footer" class="icone-footer"></li>
+                    <li class="iconemarque"> <img src="{{asset('bundles/heticapp/img/marque-mezaliza.png')}}" alt="icone_footer" class="icone-footer"></li>
+                </ul>
+            </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock template %}

@@ -1,0 +1,45 @@
+{% extends 'HETICCoreBundle::template.html.twig' %}
+
+{% block main %}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <span>Produits</span>
+                        <div class="btn-group pull-right" role="group">
+                            <button type="button" class="btn btn-default">Ajouter</button>
+                        </div>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-lg-12">
+                       <div class="panel panel-danger">
+                           <div class="panel-heading">
+                               <h3 class="panel-title">{{product.name}}</h3>
+                           </div>
+                           <div class="panel-body">
+                               <div class="list-group">
+                                    <a href="#" class="list-group-item">Code EAN 13: 3700929316301</a>
+                                    <a href="#" class="list-group-item">Prix: {{product.price}}€</a>
+                                    <a href="#" class="list-group-item">Devise: €</a>
+                                    <a href="#" class="list-group-item">TVA: 10%</a>
+                                    <a href="#" class="list-group-item">DLC: {{product.expirationDate|date('d/m/Y')}}</a>
+                                    <a href="#" class="list-group-item">Déscription: {{product.description}}</a>
+                                    <div class="btn-group" role="group">
+                                      <button type="button" class="btn btn-default">Modifier</button>
+                                      <button type="button" class="btn btn-default">Supprimer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock main %}

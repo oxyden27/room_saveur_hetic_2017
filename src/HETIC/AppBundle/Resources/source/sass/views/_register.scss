@@ -1,0 +1,38 @@
+main#register {
+    background-image: url('../img/background-user-interface.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+    form {
+        label {
+            display: none;
+        }
+        input {
+            display: block;
+            padding: 15px 15px;
+            margin: 20px 0;
+            width: 100%;
+            float: right;
+        }
+        a {
+            color: #0c002f;
+            text-align: right;
+            display: block;
+            clear: both;
+        }
+        input[type="submit"] {
+            background: #0c002f;
+            border-radius: 5px;
+            color: #FFF;
+            border: none;
+            width: auto;
+            margin-top: 40px;
+        }
+    }
+}

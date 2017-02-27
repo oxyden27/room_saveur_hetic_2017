@@ -1,0 +1,343 @@
+.modelivraison{
+padding-left:1%;
+    color:#0c002f;
+}
+
+.titreadomicile{
+color:#0c002f;
+}
+
+#output{
+    text-align: left;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-bottom: 5px;
+    color: #eb1d5d;
+}
+
+input#timelivraison {
+    display: block;
+    background-color: #eb1d5d;
+    padding: 10px 0;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-top: 5px;
+    border: 0;
+}
+        &:hover {
+            text-decoration: none;
+        }
+
+.adresselivraison{
+    width:100%;
+    text-align: left;
+    padding: 15px 10px;
+    font-size: 100;
+}
+
+.fieldsetcenter{
+    border-right: 1px solid #0c002f;
+    height: 100%;
+    padding-right: 10px;
+}
+
+.textepointrelais{
+    padding-top:20px;
+    line-height: 25px;
+}
+
+.livraison .col-sm-6, .livraison .col-sm-12 {
+    padding: 0 8px;
+}
+
+.livraison input{
+    padding: 10px 15px;
+    width: 100%;
+    margin: 10px;
+    margin-left: 0;
+}
+
+.inputstylise input{
+    border:1px solid #fff02a;
+    padding:2%
+}
+
+.livraison input[type='submit']{
+    width: 50%;
+    background-color: #eb1d5d;
+    margin-top: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+}
+
+
+.submitadresse{
+    background-color: #eb1d5d;
+    margin-top: 40px;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+}
+
+main#cart {
+    padding: 50px 0;
+    height: auto;
+    h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    table {
+        width: 100%;
+        caption {
+            color: #0c002f;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bolder;
+            font-size: 2em;
+            text-align:left;
+            font-weight:bold;
+            &.aside-title {
+                font-size: 1.5em;
+            }
+        }
+        .titregris {
+           color: #979797;
+            border-top: 1px solid #979797;
+            border-bottom: 1px solid #979797;
+            text-align: center;
+            th {
+                padding: 5px 10px;
+                text-align: center;
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                &:first-child() {
+                    padding-left: 15px;
+                    text-align: left;
+                }
+            }
+        }
+        .list {
+            text-align:left;
+            border-bottom: 1px solid #979797;
+            .imageproduct {
+                display:inline-block;
+                padding-left:0%;
+                width:125px;
+                height:63px;
+            }
+            .descriptif {
+                display:inline-block;
+                padding-left: 3%;
+
+                span a.delete {
+                    display:block;
+                    text-align:left;
+                    font-size:0.8em;
+                    position: relative;
+                    color:#979797;
+
+                }
+            }
+            td {
+                padding: 10px 0;
+                font-weight: bold;
+                text-align: center;
+                &:first-child() {
+                    text-align: left;
+                }
+            }
+        }
+        .list2 {
+            background-color: #ececec;
+            text-align:left;
+            font-weight:bold;
+            &:first-child() {
+                background-color: #fafafa;
+            }
+            td {
+                padding: 10px 0;
+                font-size: 0.8em;
+                padding: 10px 15px;
+            }
+            .prixtotal{
+                color: #e0cf00;
+                font-size:1.8em!important;
+            }
+            .prixtotal:first-child() {
+                color: #0c002f;
+            }.list2:first-child() {
+                border-bottom: 1px solid #979797;
+            }
+        }
+    }
+    a.btnapply {
+        display: block;
+        background-color: #eb1d5d;
+        padding: 10px 0;
+        border-radius: 8px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.3em;
+        margin-top: 15px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1661px) {
+.descriptif {
+    top: 10px;
+        padding-left: 0%;
+}
+
+    .supprimer {
+    top: 15px;
+}
+}
+
+
+@media screen and (max-width: 1300px) {
+
+.descriptif {
+    display: block;
+    padding-left: 0%;
+    position: relative;
+    top: 0px;
+    text-align: left;
+    padding-top: 2%;
+}
+
+.btnapply {
+    width: 300px;
+}
+
+    .supprimer {
+    display: block;
+    text-align: left;
+    font-size: 0.8em;
+    position: relative;
+    color: #979797;
+}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+input#timelivraison {
+    font-size: 1em;
+}
+
+.panierdroite {
+    width: 90%;
+        margin-bottom: 2.5%;
+}
+
+    .paniergauche {
+    width: 100%;
+    height: 100%;
+}
+
+    .tableaupanier {
+        width: 90%;}
+
+    .descriptif {
+    text-align: left;
+}
+
+    .tableaucommande2 {
+    width: 95%;
+    margin-top: 5%;
+}
+       .supprimer {
+    top:20px;
+}
+}
+
+@media screen and (max-width: 768px){
+.fieldsetcenter{
+    border-top: 1px solid #0c002f;
+    border-left: none;
+    height: 100%;
+    padding-left: 0%;
+        padding-top: 3%;
+}
+
+    .modelivraison {
+    padding-left: 0%;
+    color: #0c002f;
+    text-align: center;
+}
+
+    .titreadomicile {
+    text-align: center;
+}
+
+    .livraison{
+    text-align:center;
+            padding-bottom: 4%;
+    }
+
+    .fieldsetcenter {
+    text-align: center;
+}
+
+    main#cart table .list .descriptif {
+    display: block;
+    top: 0px;
+    padding-left: 0%;
+}
+
+    input#timelivraison {
+    font-size: 0.8em;
+}
+
+    .formlivraison{
+        border-top: 1px solid black;
+    padding-top: 5%;
+    }
+}
+
+@media screen and (max-width: 680px){
+.paniergauche {
+    width: 100%;
+    height: 100%;
+}
+
+.tableaupanier th {
+    padding: 0%;}
+
+}
+
+@media screen and (max-width: 600px){
+.imageproduct {
+    display: inline-block;
+    padding-left: 0%;
+    /* width: 90%; */
+    width: 200px;
+}
+}
+
+@media screen and (max-width: 480px){
+.imageproduct {
+    display: inline-block;
+    padding-left: 0%;
+    /* width: 90%; */
+    width: 160px;
+}
+}

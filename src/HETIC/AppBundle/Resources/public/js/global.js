@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".burger-menu").click(function(){$(this).toggleClass("menu-on")}),$(".burger-menu").on("click",function(){$("header nav").fadeToggle()})}),$(document).ready(function(){$(".slow").on("click",function(){var n=$(this).attr("href"),e=750;return $("html, body").animate({scrollTop:$(n).offset().top},e),!1})});

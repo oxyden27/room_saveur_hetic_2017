@@ -1,0 +1,95 @@
+{% extends 'HETICAppBundle::template.html.twig' %}
+
+{% block header %}
+	<header class="home-header">
+		<img src="{{asset('bundles/heticapp/img/logo_RS.png')}}" alt="logo-header" class="logo-header">
+		<div class="connexion">
+			<h2>Votre repas en 15 minutes !</h2>
+			<p>Vous habitez ou travaillez dans Paris,<br>N'attendez plus Room Saveur arrive plus vite que la faim</p>
+			<a href="{{path('fos_user_security_login')}}" class="btn-connexion">Se connecter</a>
+			<a href="{{path('fos_user_registration_register')}}" class="btn-connexion">S'inscrire</a>
+		</div>
+	</header>
+{% endblock header %}
+
+{% block main %}
+
+<main id="home">
+	<section class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<h3>Qualité</h3>
+					<h4>Des produits frais tout les jours!!</h4>
+					<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.</p>
+				</div>
+				<div class="col-sm-6">
+					<img src="{{asset('bundles/heticapp/img/poivron-rouge.jpeg')}}" alt="poivron" class="img-responsive">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="img-container">
+						<img src="{{asset('bundles/heticapp/img/about3_2.jpeg')}}" alt="plat" class="img-3_2 img-responsive hidden-xs">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<h3>Rapidité</h3>
+					<h4>Livraison en 15 min</h4>
+					<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<h3>Qualité</h3>
+					<h4>Des plats élus par nos clients</h4>
+					<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.</p>
+				</div>
+				<div class="col-sm-6">
+					<div class="img-container">
+						<img src="{{asset('bundles/heticapp/img/about3_1.jpeg')}}" alt="plat" class="img-3_1 img-responsive">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="timeline">
+		<div class="container">
+			<h3>Simplicité</h3>
+			<ul class="timeline">
+				<li class="li">
+					<div class="status">
+						<h4> Shift Created </h4>
+					</div>
+				</li>
+				<li class="li">
+					<div class="status">
+						<h4> Email Sent </h4>
+					</div>
+				</li>
+				<li class="li">
+					<div class="status">
+						<h4> SIC Approval </h4>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="choix">
+					<h3>Vous choisissez !</h3>
+					<p>Votes pour le plat qui vous plait</p>
+
+					<div class="logo-placeholder-rond"></div>
+					<div class="logo-placeholder-rond"></div>
+					<div class="logo-placeholder-rond"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+{% endblock main %}

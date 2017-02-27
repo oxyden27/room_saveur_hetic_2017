@@ -1,0 +1,79 @@
+{% extends 'HETICAppBundle::layout.html.twig' %}
+
+{% block title %} {{parent()}} - Panier {% endblock title %}
+
+{% block template %}
+
+{% block main %}
+
+<div id="panier">
+    
+    <div class="paniergauche">
+    
+        <table class="tableaupanier">
+   <caption class="titrepanier">Mon Panier</caption>
+
+   <thead> <!-- En-tête du tableau -->
+       <tr class="titregris">
+           <th>Plats</th>
+           <th>Quantités</th>
+           <th>Prix</th>
+           <th>Total</th>
+       </tr>
+   </thead>
+
+   <tbody> <!-- Corps du tableau -->
+       <tr class="list">
+           <td><img class="imageproduct" src="http://placehold.it/350x150"><div class="descriptif">SAUMON ROTI ET <br>LENTILLES<br><div class="supprimer"> X - Supprimer</div></div></td>
+           <td>-&nbsp;&nbsp;1&nbsp;&nbsp;+</td>
+           <td>22€95</td>
+           <td>22€95</td>
+       </tr>
+   </tbody>
+</table>
+        
+    </div>
+    <div class="panierdroite">
+        
+    <table class="tableaucommande2">
+   <caption class="titrepanier2">Sommaire de Commande</caption>
+   <thead> <!-- En-tête du tableau -->
+   </thead>
+   <tbody> <!-- Corps du tableau -->
+       <tr class="list2">
+           <td>Frais de Livraison</td>
+           <td>2 euros </td>      
+       </tr>
+       <tr class="list2">
+           <td>Cote de beauf</td>
+           <td>2 euros </td>      
+       </tr>
+       <tr class="list2">
+           <td>Cote de beauf</td>
+           <td>2 euros </td>      
+       </tr>
+       <tr class="list2">
+           <td>Travers de porc</td>
+           <td>2 euros </td>      
+       </tr>
+        <tr class="list2">
+           
+           <td class="prixtotal">TOTAL</td>
+           <td class="prixtotal">72.35€</td>
+           
+       </tr>
+       
+       
+   </tbody>
+</table>
+      <div class="btnapply">Continuer et payer</div>  
+    </div>
+    
+</div>
+
+
+
+
+{% endblock main %}
+
+{% endblock template %}

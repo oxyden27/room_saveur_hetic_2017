@@ -1,0 +1,45 @@
+{% extends 'HETICAppBundle::template.html.twig' %} {% block title %} {{parent()}} - Mode de Livraison {% endblock title %} {% block main %}
+<main id="cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h1 class="modelivraison">Mode de livraison</h1>
+                <div class="col-sm-6 fieldsetcenter">
+                    <h2 class="titreadomicile">Option Livraison</h2>
+
+                    <form class="livraison" method="post" action="{{path('hetic_app_confirm')}}">
+                        <div class="col-sm-6">
+                            <input type="text" name="nom" id="nom" placeholder="Nom"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" name="prenom" id="prenom" placeholder="Prénom"/>
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="adresseinput" type="text" name="adresse" id="adresse" placeholder="Adresse"/>
+                        </div>
+                        <div class="col-sm-12">
+                            <input class="adresseinput" type="text" name="compladresse" id="compladresse" placeholder="Complément d'adresse"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" name="codepostal" id="codepostal" placeholder="Code Postal"/>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" name="ville" id="ville" placeholder="Ville"/>
+                        </div>
+                        <a href="{{path('hetic_app_confirm')}}"><input class="submitadresse" type="submit" name="livraison" id="livraison" value="Je me fais livrer" /></a>
+                    </form>
+                </div>
+
+                <div class="col-sm-6">
+                    <h2 class="titreadomicile">Option Point relais</h2>
+                    <p class="textepointrelais">Grâce au point relais vous pouvez aller chercher vous même votre commande . Vous économisez sur les frais de livraison avec cette option.</p><br><h4>ET vous savez quoi elle s’y trouve déja !</h4><br>
+                    <p>TABAC LE BALZAC 3 Rue de Paris, Montreuil</p><br>
+                      <a href="{{path('hetic_app_confirmrelais')}}"><input class="submitadresse" type="submit" name="pointrelais" id="pointrelais" value="Je vais chercher mon déjeuner" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock main %}

@@ -1,0 +1,183 @@
+{% extends 'HETICAppBundle::template.html.twig' %}
+
+{% block title %} {{parent()}} - Panier {% endblock title %}
+
+{% block main %}
+<main id="cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+
+                <table class="tableaupanier">
+                   <caption>Mon Panier</caption>
+
+                   <thead> <!-- En-tête du tableau -->
+                       <tr class="titregris">
+                           <th>Plats</th>
+                           <th>Quantité</th>
+                           <th>Prix</th>
+                           <th>Total</th>
+                       </tr>
+                   </thead>
+
+                   <tbody> <!-- Corps du tableau -->
+                       <tr class="list">
+                           <td><img class="imageproduct" src="{{asset('bundles/heticapp/img/Croque-Mini.jpg')}}"><div class="descriptif">CLUB SANDWICH<span><a href="#" class="delete"><i class="fa fa-trash"></i> Supprimer</a></span></div></td>
+                           <td>-&nbsp;&nbsp;1&nbsp;&nbsp;+</td>
+                           <td>22€95</td>
+                           <td>22€95</td>
+                       </tr>
+                       <tr class="list">
+                           <td><img class="imageproduct" src="{{asset('bundles/heticapp/img/COCA COLA 33CL.jpg')}}"><div class="descriptif">COCA COLA 33CL<span><a href="#" class="delete"><i class="fa fa-trash"></i> Supprimer</a></span></div></td>
+                           <td>-&nbsp;&nbsp;1&nbsp;&nbsp;+</td>
+                           <td>2€</td>
+                           <td>2€</td>
+                       </tr>
+                       <tr class="list">
+                           <td><img class="imageproduct" src="{{asset('bundles/heticapp/img/EVIAN 50CL.jpg')}}"><div class="descriptif">EVIAN 50CL<span><a href="#" class="delete"><i class="fa fa-trash"></i> Supprimer</a></span></div></td>
+                           <td>-&nbsp;&nbsp;1&nbsp;&nbsp;+</td>
+                           <td>2€</td>
+                           <td>2€</td>
+                       </tr>
+                   </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                 <form class="formlivraison">
+                    <h2>Vous souhaitez vous faire livrer ?</h2>
+                    <div id="output"></div>
+                   <input class="adresselivraison" type="text" placeholder="Veuillez renseignez votre adresse de livraison">
+                   <input type="submit" id="timelivraison" value="Obtenir une estimation de livraison" ></input>
+                </form>
+
+                <hr>
+
+                <table class="tableaucommande">
+                    <caption class="aside-title">Sommaire de commande</caption>
+                    <thead> <!-- En-tête du tableau -->
+                    </thead>
+                    <tbody> <!-- Corps du tableau -->
+                       <tr class="list2">
+                           <td>Frais de Livraison</td>
+                           <td>2 € </td>
+                       </tr>
+                       <tr class="list2">
+                           <td class="prixtotal">TOTAL</td>
+                           <td class="prixtotal">28.95 €</td>
+                       </tr>
+                    </tbody>
+                </table>
+                <a href="{{path('hetic_app_adress')}}" class="btnapply">Continuer et payer</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock main %}
+
+
+{% block javascripts_init %}
+<script>
+
+//$('#timelivraison').on('click', function() {
+//    var adresse = $('.adresselivraison').val();
+//  });
+
+
+
+function initMap() {
+
+$('#timelivraison').on('click', function() {
+  var bounds = new google.maps.LatLngBounds;
+  var markersArray = [];
+
+
+//Test recuperer la géolocalisation
+//         navigator.geolocation.getCurrentPosition(function(position)
+//    {
+//         return "{lat:" + position.coords.latitude+", lng:" +position.coords.longitude + "}";
+//    });
+//
+//    var origin2 = navigator.geolocation.getCurrentPosition(function(position));
+
+//function LucMarie(position){
+//            navigator.geolocation.getCurrentPosition(function(position)
+//    {
+//         return "{lat:" + position.coords.latitude+", lng:" +position.coords.longitude + "}";
+//    })
+//        };
+//
+//    var origin2 = LucMarie(position) ;
+//
+//    alert(origin2);
+
+  var origin1 = {lat: 48.87, lng: 2.294};
+  var origin2 = '23B Rue De Paris';
+  var destinationB = {lat: 48.860816, lng: 2.337665};
+ var adresse = $('.adresselivraison').val();
+  var geocoder = new google.maps.Geocoder;
+
+  var service = new google.maps.DistanceMatrixService;
+  service.getDistanceMatrix({
+    origins: [origin2],
+    destinations: [adresse],
+    travelMode: google.maps.TravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.METRIC,
+    avoidHighways: false,
+    avoidTolls: false
+  }, function(response, status) {
+    if (status !== google.maps.DistanceMatrixStatus.OK) {
+      alert('Error was: ' + status);
+    } else {
+      var originList = response.originAddresses;
+      var destinationList = response.destinationAddresses;
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = '';
+      deleteMarkers(markersArray);
+
+      var showGeocodedAddressOnMap = function(asDestination) {
+//        var icon = asDestination ? destinationIcon : originIcon;
+        return function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            map.fitBounds(bounds.extend(results[0].geometry.location));
+            markersArray.push(new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location,
+//              icon: icon
+            }));
+          } else {
+            alert('Geocode was not successful due to: ' + status);
+          }
+        };
+      };
+
+      for (var i = 0; i < originList.length; i++) {
+        var results = response.rows[i].elements;
+        geocoder.geocode({'address': originList[i]},
+            showGeocodedAddressOnMap(false));
+        for (var j = 0; j < results.length; j++) {
+          geocoder.geocode({'address': destinationList[j]},
+              showGeocodedAddressOnMap(true));
+          outputDiv.innerHTML +=
+              results[j].duration.text + ' pour votre livraison ! <br>';
+        }
+      }
+    }
+  });
+
+event.preventDefault();});
+}
+
+
+function deleteMarkers(markersArray) {
+  for (var i = 0; i < markersArray.length; i++) {
+    markersArray[i].setMap(null);
+  }
+  markersArray = [];
+}
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx5PrkSKuS2w8kfv-eLIKr281j6QuZmKI&signed_in=true&callback=initMap"
+        async defer></script>
+
+{% endblock %}

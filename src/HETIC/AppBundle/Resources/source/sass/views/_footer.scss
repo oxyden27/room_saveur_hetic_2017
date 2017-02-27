@@ -1,0 +1,37 @@
+footer {
+    padding: 10px 0;
+    background: black;
+    .row {
+        margin: 30px auto;
+        a {
+            text-align: center;
+            .logo {
+                display: inline-block;
+                width: 75px;
+                height: 75px;
+            }
+        }
+        nav {
+            text-align: center;
+            ul {
+                li {
+                    display: inline-block;
+                    margin: 0 20px;
+                    a {
+                        color: #FFF;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                    i {
+                        color: #FFF;
+                        font-size: 2em;
+                    }
+                }
+            }
+        }
+        hr {
+            color: #444;
+        }
+    }
+}

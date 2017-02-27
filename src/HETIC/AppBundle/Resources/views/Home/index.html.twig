@@ -1,0 +1,107 @@
+{% extends 'HETICAppBundle::template.html.twig' %}
+
+{% block header %}
+
+<section class="home">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<a href="{{path('hetic_app_homepage')}}">
+						<img src="{{asset('bundles/heticapp/img/logo_RS.png')}}" alt="logo_footer" class="logo" style="width:80px;height:80px">
+					</a>
+				</div>
+				<div class="col-sm-6">
+					<div class="header-home">
+						<a href="{{path('fos_user_security_login')}}" class="btn-connexion btn-home">Se connecter</a>
+						<a href="{{path('fos_user_registration_register')}}" class="btn-inscription btn-home">S'inscrire</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 pull-right home-header-title">
+					<h1>Aidez le chef à cuisiner</h1>
+					<p>Vous habitez ou travaillez dans Paris ?<br>Notre chef sera ravis d'entendre vos suggestions</p>
+	                <a class="slow btn-home btn-inscription btn-vote" href="#vote">Votez pour un plat</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock header %}
+
+{% block main %}
+
+	<section class="produits">
+		<div class="container">
+			<div class="col-md-6">
+				<h2><span class="produits-title-selected">La communauté</span></h2>
+				<h4 class="produits-subtitle-selected">Vous invite à déguster...</h4>
+				<p class="produits-descr"><span>Le club sandwich du moment</span><br>Club grillé au maroilles et lamelles de boeufs fumés, oignons et roquette fraiche accompagné d'une salade coleslaw</p>
+				<p class="addOrdSuppr1"><a class="link-panier1" href="#"> - </a> 1 <a class="link-panier1" href=""> + </a></p>
+				<p class="addCart"><a class="link-panier1" href="{{path('hetic_app_cart')}}"><i class="fa fa-shopping-cart"></i> Ajouter au panier</a></p>
+			</div>
+			<div class="col-md-6 col-6-image">
+				<div class="placeholder1"> <div class="prix">22€95</div></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="second-product">
+		<h2 class="titleProduct">Nous vous proposons aussi...</h2>
+		<div class="placeholder2">
+			<div class="menu-random">
+				<div class="block-text">
+					<p class="descr-bold">Le &laquo; Boeuf français cuisson basse température &raquo;</p>
+					<p>Pièce de boeuf cuisson basse température sauce charcutière pommes de terres pleuroles</p>
+				</div>
+			</div>
+			<p class="addOrdSuppr2"><a href="#"> - </a> 1 <a href="#"> + </a></p>
+			<p class="addCart"><a href="{{path('hetic_app_cart')}}"><i class="fa fa-shopping-cart"></i> Ajouter au panier</a></p>
+		</div>
+		<div class="bandeau">
+			<h2>Bon appétit ! </h2>
+		</div>
+	</section>
+
+	<section class="container" id="vote">
+		<h2 class="choisirtitle">Choisissez le menu comme un chef<br><small>Et demain il sera dans votre assiette</small></h2>
+		<div class="container contain-spe">
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="cadre">
+							<div class="cache"></div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<span>FILET DE POULET ROTI</span>
+						<div>
+							<span>278</span>
+							<div class="vote"></div><div class="vote"></div><div class="vote"></div><div class="vote"></div><div class="voteblanc"></div><div class="voteblanc"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body ">
+						<div class="cadre second">
+							<div class="cache"><div class="coeur"></div></div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<span>SAUMON ROTI</span>
+						<div>
+							<span>304</span>
+							<div class="vote"></div><div class="vote"></div><div class="vote"></div><div class="vote"></div><div class="voteblanc"></div><div class="voteblanc"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+{% endblock main %}

@@ -1,0 +1,9 @@
+services:
+#    hetic_user.example:
+#        class: HETIC\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+    hetic_user.form.registration:
+        class: HETIC\UserBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }

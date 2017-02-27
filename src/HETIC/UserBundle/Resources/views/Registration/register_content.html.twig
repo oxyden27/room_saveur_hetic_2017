@@ -1,0 +1,40 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<section>
+	<div class="container">
+		<div class="row">
+            <div class="col-md-6 pull-right">
+                <h1>Inscription à Room Saveurs</h1>
+	    			{{ form_start(form, {'method': 'post','action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register registration-form'}}) }}
+						<div class="form-group">
+			                {{ form_label(form.username) }}
+			                {{ form_widget(form.username) }}
+			                {{ form_errors(form.username) }}
+						</div>
+						<div class="form-group">
+			                {{ form_label(form.email) }}
+			                {{ form_widget(form.email) }}
+			                {{ form_errors(form.email) }}
+						</div>
+						<div class="form-group">
+			                {{ form_label(form.plainPassword) }}
+			                {{ form_widget(form.plainPassword) }}
+			                {{ form_errors(form.plainPassword) }}
+						</div>
+						<div class="form-group">
+			                {{ form_label(form.company) }}
+			                {{ form_widget(form.company) }}
+			                {{ form_errors(form.company) }}
+						</div>
+						<div class="form-group">
+			                {{ form_label(form.mobile) }}
+			                {{ form_widget(form.mobile) }}
+			                {{ form_errors(form.mobile) }}
+						</div>
+
+	                <input type="submit" id="_submit" name="_submit" value="{{ 'security.registration.submit'|trans }}" />
+				{{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,19 @@
+hetic_core_dashboard:
+    path:     /dashboard
+    defaults: { _controller: HETICCoreBundle:Dashboard:index }
+
+hetic_core_warehouses:
+    path:     /warehouses
+    defaults: { _controller: HETICCoreBundle:Warehouses:index }
+
+hetic_core_products:
+    path:     /products
+    defaults: { _controller: HETICCoreBundle:Products:index }
+
+hetic_core_commands:
+    path:     /commands
+    defaults: { _controller: HETICCoreBundle:Commands:index }
+
+hetic_core_analytics:
+    path:     /analytics
+    defaults: { _controller: HETICCoreBundle:Analytics:index }
